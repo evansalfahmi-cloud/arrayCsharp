@@ -1,22 +1,29 @@
-﻿using System ;
+﻿/*
+INISIALISASI ARRAY
 
-class demoArray {
+tipe [] namaArray = new tipe[] {nilai1,nilai2,nilai3,nilai4....};
+*/
+
+using System ;
+
+class demoArray3 {
     static void Main (){
-        //membuat aray dari tipe char
-        char [] vokal = new char [5];
+        //inisialisasi array
+        int [] arrayA = new int[] {1000,2000,3000,4000,5000};
+        char [] vokal = {'a','i', 'u', 'e', 'o'};
 
-        //mengisi nilai elemen array
-        vokal[0] = 'a';
-        vokal[1] = 'i';
-        vokal[2] = 'u';
-        vokal[3] = 'e';
-        vokal[4] = 'o';
-
-        //menampilkan elemen array
-        Console.WriteLine("--huruf vokal--");
-        for (int i = 0; i < 5 ; i++){
-            Console.Write(vokal[i] + " ");
+        //tampilarray
+        Console.WriteLine ("Elemen dalam arrayA :");
+        for (int i = 0; i<5; i++){
+            Console.Write(arrayA[i]+" ");
         }
-        Console.WriteLine();
+
+        Console.WriteLine("\n");
+
+        Console.WriteLine("Elemen dalam array vokal :");
+        for (int v = 0 ; v<5; v++)
+        {
+            Console.Write(vokal[v]+" ");
+        }Console.WriteLine();
     }
 }
