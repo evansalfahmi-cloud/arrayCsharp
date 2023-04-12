@@ -1,29 +1,46 @@
 ﻿/*
-INISIALISASI ARRAY
+Array DUA DIMENSI
 
-tipe [] namaArray = new tipe[] {nilai1,nilai2,nilai3,nilai4....};
+1 5 3
+2 4 1
+3 2 4
+4 3 2
+
+tipe [,] namaArray = new tipe [JumlahBaris, JumlahKolom];
 */
 
 using System ;
 
-class demoArray3 {
+class demoarrayDuaDimensi {
     static void Main (){
-        //inisialisasi array
-        int [] arrayA = new int[] {1000,2000,3000,4000,5000};
-        char [] vokal = {'a','i', 'u', 'e', 'o'};
+        //membuatarray 4x3
+        int [,] tabelEmpatTiga = new int [4,3];
 
-        //tampilarray
-        Console.WriteLine ("Elemen dalam arrayA :");
-        for (int i = 0; i<5; i++){
-            Console.Write(arrayA[i]+" ");
+        //mengisi nilai kedalam elemen array
+        tabelEmpatTiga[0,0] = 1;
+        tabelEmpatTiga[0,1] = 5;
+        tabelEmpatTiga[0,2] = 3;
+        //baris kedua
+        tabelEmpatTiga[1,0] = 2;
+        tabelEmpatTiga[1,1] = 4;
+        tabelEmpatTiga[1,2] = 1;
+        //baris ketiga
+        tabelEmpatTiga[2,0] = 3;
+        tabelEmpatTiga[2,1] = 2;
+        tabelEmpatTiga[2,2] = 4;
+        //baris keempat
+        tabelEmpatTiga[3,0] = 4;
+        tabelEmpatTiga[3,1] = 3;
+        tabelEmpatTiga[3,2] = 2;
+
+        //tampilkan isi array
+        Console.WriteLine("--isi array--");
+        for (int baris = 0 ; baris <4; baris++){
+            //cetak perbaris
+            for (int kolom = 0 ; kolom <3; kolom ++){
+                Console.Write(tabelEmpatTiga[baris,kolom]+" ");
+            }//buat baris baru
+            Console.WriteLine();
         }
-
-        Console.WriteLine("\n");
-
-        Console.WriteLine("Elemen dalam array vokal :");
-        for (int v = 0 ; v<5; v++)
-        {
-            Console.Write(vokal[v]+" ");
-        }Console.WriteLine();
     }
 }
