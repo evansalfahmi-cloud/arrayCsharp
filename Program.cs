@@ -1,44 +1,69 @@
 ﻿/*
-ARRAY 3 DIMENSI
+ARRAY SEBAGAI NILAI KEMBALIAN METODE
 
-bentuk umum 
-tipe[,,]namaArray = new tipe [jumlahHalaman,jumlahBaris,jumlahKolom];
+selain sebagai parameter, array juga sering digunakan sebagainilai kembalian (return value) dari suatu metode
+
 
 */
 
 using System;
 
-class demoArrayTigaDimensi
+class demoParameterArray
 {
-    static void Main ()
+    //metode dengan nilai kembalian berupa array
+    static int[] isiArray(int ukuran)
     {
-        //inisialisasi array3d
-        int [ ,, ] arrayTigaDimensi = new int [2,3,3]
-        { 
-            {
-            {1,0,3},
-            {4,-1,2},
-            {8,2,1}
-        },
+        int[] temp = new int[ukuran];
+        int nilai;
+
+        Console.WriteLine("Mengisi array sebanyak " + ukuran + " elemen");
+        for (int i = 0; i < ukuran; i++)
         {
-            {6,8,3},
-            {4,3,6},
-            {5,9,2}
+            Console.Write("Masukkan nilai ke-" + (i + 1) + " : ");
+            nilai = int.Parse(Console.ReadLine());
+
+            //memasukkan nilai ke dalam array
+            temp[i] = nilai;
         }
-        };
-
-        for (int halaman = 0; halaman <2 ; halaman++){
-        Console.WriteLine("halaman ke- "+(halaman+1));
-        for (int baris = 0; baris < 3; baris ++){
-            for (int kolom = 0; kolom < 3; kolom++){
-                Console.Write(arrayTigaDimensi[halaman,baris,kolom]+" ");
-            }Console.WriteLine();
-        }Console.WriteLine();
+        //mengembalikan nilai berupa array
+        return temp;
     }
-    Console.WriteLine ("elemen A[1,1,2] bernilai : "+arrayTigaDimensi[1,1,2]);
+
+    static double hitungRatarata(int[] A)
+    {
+        int jumlah = 0;
+        for (int i = 0; i < A.Length; i++)
+        {
+            jumlah += A[i];
+        }
+        double rataRata = (double)jumlah / A.Length;
+        return rataRata;
+    }
+
+    static void tampilkanArray(int[] A)
+    {
+        Console.Write("isi array : ");
+        for (int i = 0; i < A.Length; i++)
+        {
+            Console.Write(A[i] + " ");
+        } Console.WriteLine();
 
     }
-    //menampilkan elemen array
-   
+
+    static void Main()
+    {
+        //deklarasikan array
+        int[] arrayID;
+
+        //memanggil metode isi array;
+        arrayID = isiArray(5);
+        Console.WriteLine();
+
+        //memanggil metode tampilkan array
+        tampilkanArray(arrayID);
+
+        //memanggil metode hitung rata rata
+        Console.WriteLine("Nilai ratarata = " + hitungRatarata(arrayID));
+    }
 
 }
